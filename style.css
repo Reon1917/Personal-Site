@@ -8,29 +8,50 @@ body {
 
 header {
     text-align: center;
-    background-color: black;
+    background-color: #24292e; /* GitHub-like dark gray */
     color: white;
     padding: 2rem 0;
 }
 
+header h1, header p {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .profile-pic img {
-    width: 150px;  /* Adjusted size */
-    height: 150px; /* Adjusted size */
-    max-width: 50%;
-    max-height: 50%;
+    width: 120px;  /* Adjusted size */
+    height: 120px; /* Adjusted size */
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 50%;
-    border: 4px solid #e74c3c;
+    border: 4px solid #0366d6; /* GitHub blue */
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic img:hover {
+    transform: scale(1.1);
+}
+
+#icon1, #icon2, #icon3 {
+    height: 32px;
+    width: 32px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#icon1:hover, #icon2:hover, #icon3:hover {
+    transform: scale(1.2);
 }
 
 h1 {
     margin: 0.5rem 0;
+    color: #0366d6; /* GitHub blue */
 }
 
 main {
     padding: 2rem;
+    padding-bottom: 6rem;
 }
 
-.about, .social-links, .resume {
+.about {
     background-color: white;
     border: 1px solid #ddd;
     padding: 1.5rem;
@@ -39,7 +60,7 @@ main {
 }
 
 h2 {
-    color: #e74c3c;
+    color: #24292e; /* GitHub-like dark gray */
 }
 
 ul {
@@ -52,20 +73,70 @@ li {
 }
 
 a {
-    color: #e74c3c;
+    color: #0366d6; /* GitHub blue */
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #1c6feb; /* Darker GitHub blue */
+}
+
+.social-resume-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-links, .resume {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    flex: 1 1 45%; /* Flex properties to fit side by side */
+    box-sizing: border-box;
 }
 
 footer {
     text-align: center;
     padding: 1rem 0;
-    background-color: black;
+    background-color: #24292e; /* GitHub-like dark gray */
     color: white;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+.rotate-hover {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.rotate-hover p{
+    margin-top: 0.5rem;
+}
+
+.rotate-hover:hover {
+    transform: rotate(5deg);
+}
+
+#c1,#c2,#c3 {
+    font-size: 8px;
+    text-align: right;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

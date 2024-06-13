@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lin's Site</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="fade-in">
         <div class="profile-pic">
             <img src="reon1.jpg" alt="Your Photo" id="pfp">
         </div>
@@ -15,26 +15,44 @@
         <p>Welcome to my personal website!</p>
     </header>
     <main>
-        <section class="about">
+        <section class="about fade-in">
             <h2>About Me</h2>
             <p>Hi!, I am Lin a second-year student from Assumption University, majoring in IT. I love softwares and games.</p>
         </section>
-        <section class="social-links">
-            <h2>Connect with Me</h2>
-            <ul>
-                <li><a href="https://github.com/Reon1917" target="_blank">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/lin-myat-phyo-b872b1217/" target="_blank">LinkedIn</a></li>
-                <li><a href="https://www.instagram.com/re0n1917/" target="_blank">Instagram</a></li>
-                <!-- Add more social links as needed -->
-            </ul>
-        </section>
-        <section class="resume">
-            <h2>Resume</h2>
-            <a href="path/to/your-resume.pdf" target="_blank">Download my Resume</a>
+        <section class="social-resume-container fade-in">
+            <section class="social-links">
+                <h2>Connect with Me</h2>
+                <ul>
+                    <li><a href="https://github.com/Reon1917" target="_blank">
+                        <img src="icons/github.png" alt="Github" id="icon1">
+                    </a></li>
+                    
+                    <li><a href="https://www.linkedin.com/in/lin-myat-phyo-b872b1217/" target="_blank">
+                        <img src="icons/linkedin.png" alt="Linkedin" id="icon2">
+                    </a></li>
+                    
+                    <li><a href="https://www.instagram.com/re0n1917/" target="_blank">
+                        <img src="icons/instagram.png" alt="Instagram" id="icon3">
+                    </a></li>
+                    
+                </ul>
+            </section>
+            <section class="resume fade-in">
+                <h2>Resume</h2>
+                <a href="path/to/your-resume.pdf" target="_blank">Download my Resume</a>
+            </section>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Your Name</p>
+        <div class="footer-links">
+        <a href="https://www.flaticon.com/free-icons/github" title="github icons" id="c1">Github icons created by riajulislam - Flaticon</a>
+        
+        <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons" id="c2">Linkedin icons created by riajulislam - Flaticon</a>
+        
+        <a href="https://www.flaticon.com/free-icons/instagram" title="instagram icons" id="c3">Instagram icons created by Freepik - Flaticon</a>
+    </div>
+        <p class="rotate-hover">&copy; 2024 Lin Myat Phyo</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
