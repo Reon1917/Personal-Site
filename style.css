@@ -1,29 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap');
+
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     color: #333;
     margin: 0;
     padding: 0;
 }
 
+a {
+    color: #0366d6; /* GitHub blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #1c6feb; /* Darker GitHub blue */
+}
+
+/* Header Styles */
 header {
-    text-align: center;
-    background-color: #24292e; 
+    background: linear-gradient(135deg, #090b14, #61c9e6);
     color: white;
     padding: 2rem 0;
+    text-align: center;
+    background-color: #24292e;
 }
 
 header h1, header p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .profile-pic img {
-    width: 120px;  
-    height: 120px; 
+    width: 120px;
+    height: 120px;
     max-width: 100%;
     max-height: 100%;
     border-radius: 50%;
-    border: 4px solid #0366d6; 
+    border: 4px solid #0366d6; /* GitHub blue */
     transition: transform 0.3s ease-in-out;
 }
 
@@ -43,24 +59,30 @@ header h1, header p {
 
 h1 {
     margin: 0.5rem 0;
-    color: #0366d6; 
+    color: #000000; /* Black */
 }
 
+/* Main Content Styles */
 main {
     padding: 2rem;
     padding-bottom: 6rem;
 }
 
-.about {
+.about, .social-links, .resume, .languages {
     background-color: white;
-    border: 1px solid #ddd;
+    border: none;
     padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.about {
     margin: 1rem 0;
-    border-radius: 8px;
 }
 
 h2 {
-    color: #24292e; 
+    color: #24292e; /* GitHub-like dark gray */
 }
 
 ul {
@@ -72,37 +94,95 @@ li {
     margin: 0.5rem 0;
 }
 
-a {
-    color: #0366d6; 
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #1c6feb; 
-}
-
+/* Social & Resume Container Styles */
 .social-resume-container {
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+    justify-content: flex-end;
+    gap: 0.5rem;
     flex-wrap: wrap;
 }
+.languages img {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    vertical-align: middle; /* Aligns the icon with the text */
+    margin-right: 10px; /* Adds some space between the icon and the text */
+    border-radius: 50%;
+}
 
-.social-links, .resume {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 1.5rem;
-    border-radius: 8px;
-    flex: 1 1 45%; 
+.social-links, .resume, .languages {
+    max-width: 300px;
+    margin: auto;
+    text-align: auto;
+    padding: 1rem;
+    flex: 1 1 45%; /* Flex properties to fit side by side */
     box-sizing: border-box;
 }
 
+.social-links:hover, .resume:hover, .languages:hover, .about:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+    .social-resume-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-links, .resume, .languages {
+        flex: 1 1 auto;
+        width: auto;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Resume Download Button Styles */
+.Resume-downloadBtn {
+    display: inline-block;
+    background-color: #0366d6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.Resume-downloadBtn:hover {
+    background-color: #1c6feb;
+}
+
+/* Footer Styles */
 footer {
     text-align: center;
     padding: 1rem 0;
-    background-color: #24292e; 
+    background-color: #24292e; /* GitHub-like dark gray */
     color: white;
     position: fixed;
     width: 100%;
@@ -114,7 +194,7 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.rotate-hover p{
+.rotate-hover p {
     margin-top: 0.5rem;
 }
 
@@ -122,11 +202,12 @@ footer {
     transform: rotate(5deg);
 }
 
-#c1,#c2,#c3 {
+#c1, #c2, #c3 {
     font-size: 8px;
     text-align: right;
 }
 
+/* Fade-in Animation */
 .fade-in {
     opacity: 0;
     animation: fadeInAnimation 1s ease-in-out forwards;
