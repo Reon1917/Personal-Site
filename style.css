@@ -3,30 +3,29 @@
 /* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #121212; /* Slightly lighter than AMOLED black */
+    color: #e0e0e0; /* Light gray for text */
     margin: 0;
     padding: 0;
 }
 
 a {
-    color: #0366d6; /* GitHub blue */
+    color: #4d9ef6; /* Bright blue for links */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
-    color: #1c6feb; /* Darker GitHub blue */
+    color: #82c0ff; /* Lighter blue for hover */
 }
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #090b14, #61c9e6);
+    background-color: #121212; /* Slightly lighter than AMOLED black */
     color: white;
     padding: 2rem 0;
     text-align: center;
-    background-color: #24292e;
 }
 
 header h1, header p {
@@ -59,7 +58,7 @@ header h1, header p {
 
 h1 {
     margin: 0.5rem 0;
-    color: #000000; /* Black */
+    color: #e0e0e0; /* Light gray */
 }
 
 /* Main Content Styles */
@@ -69,20 +68,22 @@ main {
 }
 
 .about, .social-links, .resume, .languages {
-    background-color: white;
+    background-color: #1e1e1e; /* Dark gray for cards */
+    color: #e0e0e0; /* Light gray for text */
     border: none;
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(255,255,255,0.1);
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease;
 }
 
 .about {
     margin: 1rem 0;
+    margin-bottom: 2rem;
 }
 
 h2 {
-    color: #24292e; /* GitHub-like dark gray */
+    color: #e0e0e0; /* Light gray */
 }
 
 ul {
@@ -98,15 +99,21 @@ li {
 .social-resume-container {
     display: flex;
     justify-content: flex-end;
-    gap: 0.5rem;
+    gap: 0.25rem;
     flex-wrap: wrap;
 }
+
 .languages img {
-    width: 30px; /* Adjust the width as needed */
+    width: 25px; /* Adjust the width as needed */
     height: 30px; /* Adjust the height as needed */
     vertical-align: middle; /* Aligns the icon with the text */
     margin-right: 10px; /* Adds some space between the icon and the text */
     border-radius: 50%;
+}
+
+.languages i {
+    font-size: 24px;
+    margin-right: 8px;
 }
 
 .social-links, .resume, .languages {
@@ -117,9 +124,13 @@ li {
     flex: 1 1 45%; /* Flex properties to fit side by side */
     box-sizing: border-box;
 }
+.social-links i.fa-brands {
+    font-size: 1.7rem; /* Adjust the size as needed */
+}
 
 .social-links:hover, .resume:hover, .languages:hover, .about:hover {
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(255,255,255,0.15);
+    background-color: #3a3f47; /* Soft blue-gray for hover */
 }
 
 @media (max-width: 768px) {
@@ -144,7 +155,7 @@ li {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: black;
+    background-color: #333333;
     color: #fff;
     text-align: center;
     border-radius: 6px;
@@ -166,7 +177,7 @@ li {
 /* Resume Download Button Styles */
 .Resume-downloadBtn {
     display: inline-block;
-    background-color: #0366d6;
+    background-color: #4d9ef6;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -175,14 +186,14 @@ li {
 }
 
 .Resume-downloadBtn:hover {
-    background-color: #1c6feb;
+    background-color: #82c0ff;
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
-    padding: 1rem 0;
-    background-color: #24292e; /* GitHub-like dark gray */
+    padding: 0.3rem 0;
+    background-color: #121212; 
     color: white;
     position: fixed;
     width: 100%;
@@ -198,8 +209,12 @@ footer {
     margin-top: 0.5rem;
 }
 
-.rotate-hover:hover {
+.rotate-hover:hover, .rotate-hover:active {
     transform: rotate(5deg);
+}
+
+.rotate-hover:not(:hover):not(:active) {
+    transform: rotate(0deg);
 }
 
 #c1, #c2, #c3 {
@@ -211,6 +226,50 @@ footer {
 .fade-in {
     opacity: 0;
     animation: fadeInAnimation 1s ease-in-out forwards;
+}
+
+.projects-container {
+    margin-top: 3rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.project-card {
+    width: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.project-info {
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark gray */
+    color: #e0e0e0; /* Light gray */
+    text-align: center;
+}
+
+.project-info h3 {
+    margin: 0 0 10px;
+    color: #4d9ef6; /* Bright blue */
+}
+
+.project-info p {
+    margin: 0;
 }
 
 @keyframes fadeInAnimation {
